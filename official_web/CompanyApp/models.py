@@ -7,7 +7,7 @@ class SliderImgs(models.Model):
     sliderImg = models.ImageField(upload_to="slider_imgs/")
 
     def __str__(self):
-        return self.sliderImg
+        return str(self.sliderImg)
 
 class MemberInfo(models.Model):
     name = models.CharField(max_length=200)
