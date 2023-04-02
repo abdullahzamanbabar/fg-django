@@ -6,6 +6,9 @@ from django.db import models
 class SliderImgs(models.Model):
     sliderImg = models.ImageField(upload_to="slider_imgs/")
 
+    def __str__(self):
+        return self.sliderImg
+
 class MemberInfo(models.Model):
     name = models.CharField(max_length=200)
     position = models.CharField(max_length=200)
@@ -20,3 +23,6 @@ class MemberInfo(models.Model):
     group = models.CharField(max_length=10, choices=GROUP_CHOICES, default=1)
     LinkedinURL = models.CharField(max_length=200, blank=True)
     picture = models.ImageField(upload_to="members_imgs/")
+    
+    def __str__(self):
+        return self.name+"-"+self.position+"-"+self.group
