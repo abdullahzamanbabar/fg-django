@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CompanyApp/css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'CompanyApp/css/about.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <title>About Us | Fiores Global</title>
+</head>
+<body>
+      <!-- HEADER -->
+      <div class="container-fluid headerTop">
+        <div class="container pt-4 header">
+            <h1>FIORES</h1>
+            <h5>GLOBAL</h5>
+        </div>
+    </div>
+    <!-- NAVIGATION -->
+    <div class="container-fluid navigate">
+      <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'CompanyApp:index' %}"><span>Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'CompanyApp:about' %}"><span>About Us</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'CompanyApp:projects' %}"><span>Our Projects</span></a>
+          </li>
+          <li class="nav-item show">
+              <a class="nav-link" href="{% url 'CompanyApp:team' %}"><span class="show">Team</span></a>
+            </li>
+            <li class="nav-item show">
+              <a class="nav-link" href="{% url 'CompanyApp:story' %}"><span class="show">Story</span></a>
+            </li>
+            {% comment %} <li class="nav-item show">
+              <a class="nav-link" href="#"><span class="show">Blog</span></a>
+            </li> {% endcomment %}
+          <li class="nav-item dropdown hide">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">More</a>
+              <ul class="dropdown-menu">
+              <li>
+                  <a class="nav-link" href="team.html"><span>Team</span></a>
+              </li>
+              <li>
+                  <a class="nav-link" href="story.html"><span>Story</span></a>
+              </li>
+              {% comment %} <li>
+                  <a class="nav-link" href="#"><span>Blog</span></a>
+              </li> {% endcomment %}
+              </ul>
+          </li>
+      </ul>
+  </div>
+    <!-- ABOUT -->
+    <div class="container-fluid aboutouter">
+        <div class="container aboutinner">
+            <h2>FIORES-Venture Builder</h2>
+            <p>
+                FIORES is a multinational project where young entrepreneurs come together and work on Start-Ups. This project, which does not focus on a specific sector, determines the gaps in the markets with respect to analyzes of the different parameters such as market research and risk analysis, brings together the appropriate team and starts its work. This project, which carries out studies in different fields, mainly focused on software and international trade.
+            </p>
+        </div>
+        <div class="container aboutinner">
+            <h2>Vision</h2>
+            <p>
+                To take a share from the world market in different sectors, to be a pioneer in innovation by finding problems and developing constructive solutions to them. To shift world trade to young people who are much more open to research and questioning, much more dynamic and much more knowledgeable in technology.
+            </p>
+        </div>
+        <div class="container aboutinner">
+            <h2>Values</h2>
+            <p>
+                Respect for life and the human being, in all its expressions and stages freedom, cooperation, ethical entrepreneurship as a generator of global wealth, standardization and efficiency in obtaining and expenditure of common resources.
+            </p>
+        </div>
+        <div class="container aboutinner">
+            <h2>Legal Form</h2>
+            <p>
+                It will be a “Türkiye Based Venture Building Project” with its subsidiaries in other countries, made up of different partners: the directors of FIORES, the industrial partners, and the investment partners. The participation of each partner and it's corresponding annual the benefit will be determined by the degree of participation in the development of FIORES and our projects.
+            </p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="container-fluid footerTop">
+        <div class="container pt-4 footer">
+            <p>business@fioresglobal.com</p>
+            <p>cv@fioresglobal.com</p>
+            <a href="mailto:cv@fioresglobal.com"><img src="{% static 'CompanyApp/imgs/gmail32.png' %}" alt="gmail"></a>
+            <a href="https://www.instagram.com/fioresglobal/" target="_blank"><img src="{% static 'CompanyApp/imgs/insta32.png' %}" alt="insta"></a>
+            <a href="https://www.linkedin.com/company/fiores/" target="_blank"><img src="{% static 'CompanyApp/imgs/linkedin32.png' %}" alt="linkedin"></a>
+        </div>
+    </div>
+</body>
+</html>

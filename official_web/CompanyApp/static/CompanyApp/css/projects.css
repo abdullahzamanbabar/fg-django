@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+
+.teamouter {
+    background-color:#FAEDCD;
+    padding-bottom: 4%;
+}
+
+.row {
+    text-align: justify;
+    padding-left: 7%;
+    padding-right:7%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.row h3{
+    text-align: left;
+    padding-top:4%;
+}
+
+.row p{
+    padding-top: 2%;
+    padding-right:5%
+}
+
+.teaminfo {
+    padding-top:4%;
+}

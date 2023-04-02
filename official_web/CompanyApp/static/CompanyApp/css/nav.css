@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+
+.container-fluid.headerTop{
+    display: inline-block;
+    /* border: solid; */
+    background-color: #f9daa7;
+}
+
+.container.header {
+    /* border: solid; */
+    text-align: center;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.container-fluid.navigate {
+    position: sticky;
+    top:0;
+    display: inline-block;
+    background-color: #ffffff;
+    z-index: 2;
+}
+
+/* .header h1 {
+    border:solid;
+} */
+
+.header h5 {
+    /* border: solid; */
+    margin-top: -1%;
+    padding-bottom: 0.55%;
+}
+
+.nav span {
+    /* border: solid; */
+    color: black;
+    font-size: 80%;
+    font-weight: 500;
+}
+
+.nav span:hover{
+    border-bottom: solid;
+    border-width: 1px !important;;
+    /* border-color: azure; */
+}
+
+.container-fluid.footerTop{
+    display: inline-block;
+    /* border: solid; */
+    background-color: #f9daa7;
+}
+
+.container.footer {
+    /* border: solid; */
+    text-align: center;
+}
+
+.container.footer p {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.container.footer a {
+    margin-right: .5%;
+}
+
+.hide{
+    display:none;
+}
+
+.nav-link {
+    color:#000000 !important;
+}
+.nav-link.dropdown-toggle{
+    margin-left:0% !important;
+}
+
+
+@media screen and (max-width: 500px) {
+    .show {
+        display: none;
+    }
+    .hide {
+        display:inline-block;
+    }
+  }
