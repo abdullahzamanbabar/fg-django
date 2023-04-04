@@ -45,14 +45,14 @@
             <div id="row1" class="col-sm-6 p-3">
                 <div class="container-fluid rowdata">
                     <h1>Our Story</h1>
-                    <p><h5 style="display:inline-block">Fiores</h5> was founded in June 2022 and officially...</p>
+                    <p>{{story}}</p>
                     <p id="readmore" style="float:right"><a href="{% url 'CompanyApp:story' %}">Read More</a></p>
                 </div>
             </div>
             <div id="row2" class="col-sm-6 p-3">
                 <div class="container-fluid rowdata" style>
-                    <h2>What is FIORES GLOBAL?</h2>
-                    <p><h5 style="display:inline-block">Fiores</h5> is a multinational project where young entrepreneurs come together and work on Start-Ups. This project, which does not focus on a specific sector, determines the gaps in the markets with respect to analyzes of the different parameters such as market research and risk analysis, brings together the appropriate team and starts its work. This project, which carries out studies in different fields, mainly focused on software and international trade.</p>
+                    <h2>{{homeColumn2.title}}</h2>
+                    <p>{{homeColumn2.text}}</p>
                 </div>
             </div>
         </div>

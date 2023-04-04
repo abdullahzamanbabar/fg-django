@@ -13,41 +13,17 @@
     <!-- TEAM -->
     <div class="container-fluid teamouter">
 
-        <!-- GLOBAL -->
-
-        <div class="container teamGlob">
-            <img src="{% static 'CompanyApp/imgs/global.jpg' %}"/>
-        </div>
-
         
-    
-        <div class="container-fluid teamMembers">
-            <div class="row">
-                {% for member in membersGlobal %}
-                <div class="col-sm-4">
-                    <img class="img-fluid" src="{{ member.picture.url}}" />
-                    <div class="container-fluid memberInfo">
-                        <h5>{{member.name}}</h5>
-                        <p style="padding-left:5%">{{member.position}}</p>
-                        {% comment %} <p style="padding-left:5%"><a style="display:inline; text-decoration:none"href="{{member.LinkedinURL}}">Contact Me</a></p> {% endcomment %}
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-
-
-        <!-- RED -->
-
+        {% for g in groups %}
         <div class="container-fluid">
             <div class="row logoInfo">
                 <div class="col-sm-4 groupLogo">
-                    <img src="{% static 'CompanyApp/imgs/red.png' %}">
+                    <img src="{{g.picture.url}}">
                 </div> 
                 <div class="col-sm-8 groupInfo">
-                    <h1>RED GROUP</h1>
+                    <h1>{{g.group_name}}</h1>
                     <p>
-                        The Red Group was built as a structure that examines the basic structures of countries by conducting research, prepares reports in line with the data it has obtained, and provides the necessary connections and equipment to get a share from the selected markets by taking these reports into consideration. The first step in research is the history of the countries. Entering a market that you do not know about its history, culture and ethnic structure is one of the biggest mistakes that can be made. Researches include projects planned or realized on a country basis, investments, import and export rates, signed agreements, relations with neighboring countries and many other structures. FIORES is not a political project, it does not and will not do politics.
+                        {{g.text}}
                     </p>
                 </div>
             </div>
@@ -55,7 +31,8 @@
 
         <div class="container-fluid teamMembers">
             <div class="row">
-                {% for member in membersRed %}
+                {% for member in members %}
+                {% if member.group_name.group_name == g.group_name %}
                 <div class="col-sm-4">
                     <img class="img-fluid" src="{{ member.picture.url}}" />
                     <div class="container-fluid memberInfo">
@@ -63,69 +40,10 @@
                         <p style="padding-left:5%">{{member.position}}</p>
                     </div>
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
-
-        <!-- BLUE -->
-
-        <div class="container-fluid">
-            <div class="row  logoInfo">
-                <div class="col-sm-4 groupLogo">
-                    <img src="{% static 'CompanyApp/imgs/blue.png' %}">
-                </div> 
-                <div class="col-sm-8 groupInfo">
-                    <h1>BLUE GROUP</h1>
-                    <p>
-                        Working on health technologies, the Blue group works to develop different solutions for 3D modelling in the health sector. The aim of the young and dynamic team consisting of geomatic engineers and software engineers is to provide serial software support to hospitals and clinics around the world at low prices and to offer new technological solutions to the world by conducting R&D studies.
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-                <div class="container-fluid teamMembers">
-            <div class="row">
-                {% for member in membersBlue %}
-                <div class="col-sm-4">
-                    <img class="img-fluid" src="{{ member.picture.url}}" />
-                    <div class="container-fluid memberInfo">
-                        <h5>{{member.name}}</h5>
-                        <p style="padding-left:5%">{{member.position}}</p>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-
-        <!-- GREEN -->
-
-        <div class="container-fluid">
-            <div class="row logoInfo">
-                <div class="col-sm-4 groupLogo">
-                    <img src="{% static 'CompanyApp/imgs/green.png' %}">
-                </div> 
-                <div class="col-sm-8 groupInfo">
-                    <h1>GREEN GROUP</h1>
-                    <p>
-                        This team is working on a super application that can be integrated into universities. This application offers university students a good experience in the economic, social and cultural fields thanks to various interfaces. It will be integrated into universities in the coming months together with the marketing team.
-                    </p>
-            </div>
-        </div>
-        </div>
-
-        <div class="container-fluid teamMembers">
-            <div class="row">
-                {% for member in membersGreen %}
-                <div class="col-sm-4">
-                    <img class="img-fluid" src="{{ member.picture.url}}" />
-                    <div class="container-fluid memberInfo">
-                        <h5>{{member.name}}</h5>
-                        <p style="padding-left:5%">{{member.position}}</p>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
 {% endblock %}

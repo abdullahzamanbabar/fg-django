@@ -12,29 +12,13 @@
 {% block sitecontent %}
     <!-- ABOUT -->
     <div class="container-fluid aboutouter">
+        {% for item in about %}
         <div class="container aboutinner">
-            <h2>FIORES-Venture Builder</h2>
+            <h2>{{item.title}}</h2>
             <p>
-                FIORES is a multinational project where young entrepreneurs come together and work on Start-Ups. This project, which does not focus on a specific sector, determines the gaps in the markets with respect to analyzes of the different parameters such as market research and risk analysis, brings together the appropriate team and starts its work. This project, which carries out studies in different fields, mainly focused on software and international trade.
+                {{item.text}}
             </p>
         </div>
-        <div class="container aboutinner">
-            <h2>Vision</h2>
-            <p>
-                To take a share from the world market in different sectors, to be a pioneer in innovation by finding problems and developing constructive solutions to them. To shift world trade to young people who are much more open to research and questioning, much more dynamic and much more knowledgeable in technology.
-            </p>
-        </div>
-        <div class="container aboutinner">
-            <h2>Values</h2>
-            <p>
-                Respect for life and the human being, in all its expressions and stages freedom, cooperation, ethical entrepreneurship as a generator of global wealth, standardization and efficiency in obtaining and expenditure of common resources.
-            </p>
-        </div>
-        <div class="container aboutinner">
-            <h2>Legal Form</h2>
-            <p>
-                It will be a “Türkiye Based Venture Building Project” with its subsidiaries in other countries, made up of different partners: the directors of FIORES, the industrial partners, and the investment partners. The participation of each partner and it's corresponding annual the benefit will be determined by the degree of participation in the development of FIORES and our projects.
-            </p>
-        </div>
+        {% endfor %}
     </div>
 {% endblock %}

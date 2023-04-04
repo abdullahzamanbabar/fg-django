@@ -40,9 +40,9 @@
             <li class="nav-item show">
               <a class="nav-link" href="{% url 'CompanyApp:story' %}"><span class="show">Story</span></a>
             </li>
-            {% comment %} <li class="nav-item show">
-              <a class="nav-link" href="#"><span class="show">Blog</span></a>
-            </li> {% endcomment %}
+            <li class="nav-item show">
+              <a class="nav-link" href="{% url 'CompanyApp:contact' %}"><span class="show">Contact Us</span></a>
+            </li>
           <li class="nav-item dropdown hide">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">More</a>
               <ul class="dropdown-menu">
@@ -52,9 +52,9 @@
               <li>
                   <a class="nav-link" href="{% url 'CompanyApp:story' %}"><span>Story</span></a>
               </li>
-              {% comment %} <li>
-                  <a class="nav-link" href="#"><span>Blog</span></a>
-              </li> {% endcomment %}
+              
+                  <a class="nav-link" href="{% url 'CompanyApp:contact' %}"><span>Contact Us</span></a>
+              </li>
               </ul>
           </li>
       </ul>
@@ -66,11 +66,15 @@
     <!-- FOOTER -->
     <div class="container-fluid footerTop">
         <div class="container pt-4 footer">
-            <p>business@fioresglobal.com</p>
-            <p>cv@fioresglobal.com</p>
-            <a href="mailto:cv@fioresglobal.com"><img src="{% static 'CompanyApp/imgs/gmail32.png' %}" alt="gmail"></a>
-            <a href="https://www.instagram.com/fioresglobal/" target="_blank"><img src="{% static 'CompanyApp/imgs/insta32.png' %}" alt="insta"></a>
-            <a href="https://www.linkedin.com/company/fiores/" target="_blank"><img src="{% static 'CompanyApp/imgs/linkedin32.png' %}" alt="linkedin"></a>
+            <p>{{footerText.textTop}}</p>
+            <p>{{footerText.textBottom}}</p>
+            {% for icon in footerIcon %}
+              {% if '@' in icon.iconUrl %}
+            <a href="mailto:{{icon.iconUrl}}"><img src="{{icon.icon.url}}" alt=""></a>
+              {% else %}
+            <a href="{{icon.iconUrl}}" target="_blank"><img src="{{icon.icon.url}}" alt=""></a>
+              {% endif %}
+            {% endfor %}
         </div>
     </div>
 </body>

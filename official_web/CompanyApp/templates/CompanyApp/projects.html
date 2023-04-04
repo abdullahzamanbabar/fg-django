@@ -13,31 +13,15 @@
     <!-- PROJECTS -->
     <div class="container-fluid teamouter">
         <div class="row">
+            {% for item in projects %}
             <div class="col-sm-6 teaminfo">
-                <img class="img-fluid" src="{% static 'CompanyApp/imgs/blueful.jpg' %}" />
-                <h3>COBAL3D</h3>
+                <img class="img-fluid" src="{{ item.picture.url}}" />
+                <h3>{{item.title}}</h3>
                 <p>
-                    This project works to bring innovations to the health sector in the field of laser scanning and 3D modeling, to develop different imaging systems, most importantly to offer all these services at a much more affordable price than existing technologies and to provide software support to hospitals and clinics. The team mostly consists of geomatics engineers and software engineers.
+                    {{item.text}}
                 </p>
             </div>
-            <div class="col-sm-6 teaminfo">
-                <img class="img-fluid" src="{% static 'CompanyApp/imgs/greenful.jpg' %}" />
-                <h3>CITY HACETTEPE</h3>
-                <p>
-                    It is a mobile application designed to overcome some financial, social and cultural difficulties experienced at Hacettepe University, to create mutualistic interactions among students and to make campus life more livable.
-                </p>
-            </div>
+            {% endfor %}
         </div>
-
-        <div class="row">
-            <div class="col-sm-6 teaminfo">
-                <img class="img-fluid" src="{% static 'CompanyApp/imgs/redful.jpg' %}" />
-                <h3>BUSINESS NETWORK BETWEEN TURKEY-EUROPE</h3>
-                <p>
-                    This project is designed to create a huge business network between Turkey and European countries and to place students who have completed or are about to complete their university education in Turkey to work in Europe.
-                </p>
-            </div>
-        </div>
-
     </div>
 {% endblock %}
