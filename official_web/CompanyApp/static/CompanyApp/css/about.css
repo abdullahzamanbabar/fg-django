@@ -17,6 +17,7 @@
     width:72% !important;
     text-align: justify;
     font-family: 'Roboto', sans-serif;
+    box-shadow: 10px 10px 5px;
 }
 
 .aboutinner h2{
