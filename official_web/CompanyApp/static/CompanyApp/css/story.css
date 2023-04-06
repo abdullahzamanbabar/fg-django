@@ -10,7 +10,7 @@
 .storyinner{
     /* border:solid; */
     border-radius: 2%;
-    background-color: #2e4f4f;
+    background-color: #342606;
     color: #f9daa7;
     width:65% !important;
     margin-top: 5%;
@@ -19,8 +19,9 @@
     font-family: 'Roboto', sans-serif;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
     .storyinner {
         border-radius: 0%;
+        width:100% !important;
     }
   }

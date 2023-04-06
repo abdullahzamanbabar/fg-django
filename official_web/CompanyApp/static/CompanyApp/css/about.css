@@ -3,7 +3,7 @@
 
 .aboutouter {
     display: inline-block;
-    background-color: #2e4f4f;
+    background-color: #342606;
     text-align: center;
     padding-bottom: 4%;
 }
@@ -22,3 +22,9 @@
 .aboutinner h2{
     margin-bottom: 2%;
 }
+
+@media screen and (max-width: 800px) {
+    .aboutinner {
+        width:100% !important;
+    }
+  }
