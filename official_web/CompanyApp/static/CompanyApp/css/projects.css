@@ -2,7 +2,7 @@
 
 
 .teamouter {
-    background-color:#FAEDCD;
+    background-color: #2e4f4f;
     padding-bottom: 4%;
 }
 
@@ -11,11 +11,13 @@
     padding-left: 7%;
     padding-right:7%;
     font-family: 'Roboto', sans-serif;
+    color: #faedcd;
 }
 
 .row h3{
     text-align: left;
     padding-top:4%;
+    text-decoration: underline;
 }
 
 .row p{
@@ -25,4 +27,8 @@
 
 .teaminfo {
     padding-top:4%;
+}
+
+.teaminfo img{
+    box-shadow: 10px 10px 10px #212529;
 }
