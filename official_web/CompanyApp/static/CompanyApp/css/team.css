@@ -3,7 +3,7 @@
 
 .teamouter {
     display:inline-block;
-    background-color: #FAEDCD;
+    background-color: #2e4f4f;
     padding-bottom: 3%;
 }
 
@@ -16,28 +16,29 @@
 .teamGlob img {
     /* border:solid; */
     border-width:10px;
-    border-radius: 50%; 
+    border-radius: 50%;
     border-color: #573c11;
 }
 
 .teamMembers {
     /* border:solid; */
-    background-color: #FAEDCD;
+    background-color: #2e4f4f;
 }
 
 .row {
-    /* border:solid; */
-    background-color: #f3e0b5;
+    /* border:solid;*/
+    background-color: #ffffff;
     text-align: center;
     margin-left:3% !important;
     margin-right:3% !important;
     padding-top: 3%;
     padding-bottom: 3%;
+    border-radius: 25px;
 }
 
 .memberInfo {
     position: relative;
-    background-color: #f9daa7;
+    background-color: #ffffff;
     text-align: left;
     width:65% !important;
     padding-top: 2%;
@@ -47,10 +48,18 @@
     margin-left: 35% !important;
     z-index: 1;
     font-family: 'Roboto', sans-serif;
+    box-shadow: 7px 7px 10px;
+    border-radius: 25px;
+    word-break:break-all;
+}
+
+.memberInfo p {
+    font-style: italic;
+    color: blue;
 }
 
 .logoInfo {
-    background-color: #FAEDCD;
+    background-color: #2e4f4f;
 }
 
 .groupLogo {
@@ -61,6 +70,7 @@
     text-align: justify;
     padding-right:15% !important;
     font-family: 'Roboto', sans-serif;
+    color: #faedcd;
 }
 
 .groupInfo h1{
