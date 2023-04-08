@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Evanston Tavern 1893';
+    src: local('Evanston Tavern 1893 Medium'), local('Evanston-Tavern-1893-Medium'),
+        url('../fonts/EvanstonTavern-1893Medium.woff2') format('woff2'),
+        url('../fonts/EvanstonTavern-1893Medium.woff') format('woff'),
+        url('../fonts/EvanstonTavern-1893Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
