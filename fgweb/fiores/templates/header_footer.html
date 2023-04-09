@@ -79,14 +79,14 @@
             <ul class="main-navbar-list flex flex-col gap-5 text-green-950 text-4xl font-sans mt-5">
 
                 <li class="main-navbar-list-item flex justify-center"> <a
-                        class="transition ease hover:text-slate-500 duration-200 p-2" href="index.html">Home</a> </li>
+                        class="transition ease hover:text-slate-500 duration-200 p-2" href="{% url 'fiores:index' %}">Home</a> </li>
                 <li class="main-navbar-list-item flex justify-center"> <a
-                        class="transition ease hover:text-slate-500 duration-200 p-2" href="about.html">About</a>
+                        class="transition ease hover:text-slate-500 duration-200 p-2" href="{% url 'fiores:about' %}">About</a>
                 </li>
                 <li class="main-navbar-list-item flex justify-center"> <a
-                        class="transition ease hover:text-slate-500 duration-200 p-2" href="team.html">Team</a></li>
+                        class="transition ease hover:text-slate-500 duration-200 p-2" href="{% url 'fiores:team' %}">Team</a></li>
                 <li class="main-navbar-list-item flex justify-center"> <a
-                        class="transition ease hover:text-slate-500 duration-200 p-2" href="projects.html">Projects</a>
+                        class="transition ease hover:text-slate-500 duration-200 p-2" href="{% url 'fiores:projects' %}">Projects</a>
                 </li>
             </ul>
         </nav>
