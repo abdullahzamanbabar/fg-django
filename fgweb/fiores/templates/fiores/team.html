@@ -21,9 +21,10 @@
                 {% if member.group == "Leadership"%}
                     <li>
                         <div class="flex flex-col md:flex-row items-center gap-x-6">
-                            <img class="h-48 w-48 rounded" src="{{member.photo.url}}" alt="{{member.name}}">
+                            {% load cropping %}
+                            <img class="h-44 w-44 object-cover rounded" src="{% cropped_thumbnail member "cropping" scale=0.5 %}" alt="{{member.name}}">
                             <div>
-                                <h3 class="text-base w-48 font-semibold leading-7 tracking-tight text-gray-900">
+                                <h3 class="text-base w-44 font-semibold leading-7 tracking-tight text-gray-900">
                                 {{member.name}}
                                 </h3>
                                 <p class="text-sm font-semibold leading-6 text-indigo-600">{{member.position}}</p>
@@ -62,9 +63,10 @@
                 {% if member.group == "Red Group"%}
                     <li>
                         <div class="flex flex-col md:flex-row items-center gap-x-6">
-                            <img class="h-48 w-48 rounded" src="{{member.photo.url}}" alt="{{member.name}}">
+                            {% load cropping %}
+                            <img class="h-44 w-44 object-cover rounded" src="{% cropped_thumbnail member "cropping" scale=0.5 %}" alt="{{member.name}}">
                             <div>
-                                <h3 class="text-base w-48 font-semibold leading-7 tracking-tight text-gray-900">
+                                <h3 class="text-base w-44 font-semibold leading-7 tracking-tight text-gray-900">
                                 {{member.name}}
                                 </h3>
                                 <p class="text-sm font-semibold leading-6 text-indigo-600">{{member.position}}</p>
@@ -97,9 +99,10 @@
                 {% if member.group == "Blue Group"%}
                     <li>
                         <div class="flex flex-col md:flex-row items-center gap-x-6">
-                            <img class="h-48 w-48 rounded" src="{{member.photo.url}}" alt="{{member.name}}">
+                            {% load cropping %}
+                            <img class="h-44 w-44 object-cover  rounded" src="{% cropped_thumbnail member "cropping" scale=0.5 %}" alt="{{member.name}}">
                             <div>
-                                <h3 class="text-base w-48 font-semibold leading-7 tracking-tight text-gray-900">
+                                <h3 class="text-base w-44 font-semibold leading-7 tracking-tight text-gray-900">
                                 {{member.name}}
                                 </h3>
                                 <p class="text-sm font-semibold leading-6 text-indigo-600">{{member.position}}</p>
@@ -114,7 +117,7 @@
                 </ul>
             </div>
         </div>
-        <!-- TEAM // GREEN -->
+        <!-- TEAM // CITY -->
 
         <div class="bg-white py-24 sm:py-32">
             <div class="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
@@ -137,9 +140,10 @@
                 {% if member.group == "City"%}
                     <li>
                         <div class="flex flex-col md:flex-row items-center gap-x-6">
-                            <img class="h-48 w-48 rounded" src="{{member.photo.url}}" alt="{{member.name}}">
+                            {% load cropping %}
+                            <img class="h-44 w-44 object-cover rounded" src="{% cropped_thumbnail member "cropping" scale=0.5 %}" alt="{{member.name}}">
                             <div>
-                                <h3 class="text-base w-48 font-semibold leading-7 tracking-tight text-gray-900">
+                                <h3 class="text-base w-44 font-semibold leading-7 tracking-tight text-gray-900">
                                 {{member.name}}
                                 </h3>
                                 <p class="text-sm font-semibold leading-6 text-indigo-600">{{member.position}}</p>

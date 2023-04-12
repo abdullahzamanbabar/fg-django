@@ -1,4 +1,5 @@
 from django.db import models
+from image_cropping import ImageRatioField
 import os
 
 # Create your models here.
@@ -6,7 +7,6 @@ class SliderImgs(models.Model):
     sliderImg = models.ImageField(upload_to="slider_imgs/")
 
     def delete(self, *args, **kwargs):
-        # to delete image from the memebers folder on delete
         os.remove(self.sliderImg.path)
         super().delete(*args, **kwargs)
 
@@ -17,11 +17,10 @@ class Contact(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)
     subject = models.CharField(max_length=1000)
-    message = models.TextField()
+    message = models.TextField(blank=True, verbose_name='Message (Optional)')
     cv = models.FileField(upload_to="cvs/", max_length=300)
 
     def delete(self, *args, **kwargs):
-        # to delete image from the memebers folder on delete
         os.remove(self.cv.path)
         super().delete(*args, **kwargs)
 
@@ -43,15 +42,14 @@ class Members(models.Model):
     group =  models.CharField(max_length=200, choices=choices, default='1')
     linkedin =  models.CharField(max_length=200)
     photo = models.ImageField(upload_to="members/")
+    cropping = ImageRatioField('photo', '650x650')
 
     def delete(self, *args, **kwargs):
-        # to delete image from the memebers folder on delete
         os.remove(self.photo.path)
         super().delete(*args, **kwargs)
 
     def __str__(self):
         return self.name+"-"+self.position
-
 
 class Projects(models.Model):
     title = models.CharField(max_length=200)
@@ -62,7 +60,6 @@ class Projects(models.Model):
     image2 = models.ImageField(upload_to="projects/")
 
     def delete(self, *args, **kwargs):
-        # to delete image from the memebers folder on delete
         os.remove(self.logo.path)
         os.remove(self.image1.path)
         os.remove(self.image2.path)

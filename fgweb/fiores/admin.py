@@ -1,5 +1,6 @@
 from django.contrib import admin
 import os
+from image_cropping import ImageCroppingMixin
 
 from fiores.models import SliderImgs, Contact, Members, Projects
 
@@ -13,14 +14,11 @@ class SliderImgsAdmin(admin.ModelAdmin):
 
 class ContactAdmin(admin.ModelAdmin):
     def delete_queryset(self, request, queryset):
-        # Delete the associated file for each object in the queryset selected from the Action dropdown in admin
-        # https://docs.djangoproject.com/en/4.2/ref/contrib/admin/actions/
         for obj in queryset:
             os.remove(obj.cv.path)
-        # Call the parent method to delete the queryset from the database
         super().delete_queryset(request, queryset)
 
-class MembersAdmin(admin.ModelAdmin):
+class MembersAdmin(ImageCroppingMixin, admin.ModelAdmin):
     def delete_queryset(self, request, queryset):
         for obj in queryset:
             os.remove(obj.photo.path)
