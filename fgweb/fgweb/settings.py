@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     #Installed Apps
     'easy_thumbnails',
     'image_cropping',
+    'adminsortable2',
 ]
 
 MIDDLEWARE = [

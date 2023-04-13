@@ -43,7 +43,17 @@ class Members(models.Model):
     group =  models.CharField(max_length=200, choices=choices, default='1')
     linkedin =  models.CharField(max_length=200)
     photo = models.ImageField(upload_to="members/")
-    cropping = ImageRatioField('photo', '650x650',)
+    cropping = ImageRatioField('photo', '650x650', free_crop=True)
+
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+        db_index=True,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def delete(self, *args, **kwargs):
         os.remove(self.photo.path)

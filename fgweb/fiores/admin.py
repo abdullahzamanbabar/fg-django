@@ -1,6 +1,7 @@
 from django.contrib import admin
 import os
 from image_cropping import ImageCroppingMixin
+from adminsortable2.admin import SortableAdminMixin
 
 from fiores.models import SliderImgs, Contact, Members, Projects
 
@@ -18,7 +19,9 @@ class ContactAdmin(admin.ModelAdmin):
             os.remove(obj.cv.path)
         super().delete_queryset(request, queryset)
 
-class MembersAdmin(ImageCroppingMixin, admin.ModelAdmin):
+class MembersAdmin(SortableAdminMixin, ImageCroppingMixin, admin.ModelAdmin):
+    list_display = ['name', 'my_order']
+    ordering = ['my_order']
     def delete_queryset(self, request, queryset):
         for obj in queryset:
             os.remove(obj.photo.path)
