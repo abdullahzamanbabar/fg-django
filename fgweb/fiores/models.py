@@ -7,6 +7,16 @@ class SliderImgs(models.Model):
     sliderImg = models.ImageField(upload_to="slider_imgs/")
     cropping = ImageRatioField('sliderImg', '1080x1080', allow_fullsize=True, free_crop=True)
 
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+        db_index=True,
+    )
+
+    class Meta:
+        ordering = ['my_order']
+
     def delete(self, *args, **kwargs):
         os.remove(self.sliderImg.path)
         super().delete(*args, **kwargs)
@@ -20,6 +30,16 @@ class Contact(models.Model):
     subject = models.CharField(max_length=1000)
     message = models.TextField(blank=True, verbose_name='Message (Optional)')
     cv = models.FileField(upload_to="cvs/", max_length=300)
+
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+        db_index=True,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def delete(self, *args, **kwargs):
         os.remove(self.cv.path)
@@ -72,6 +92,16 @@ class Projects(models.Model):
     croppinglogo = ImageRatioField('logo', '650x650', allow_fullsize=True, free_crop=True)
     croppingimage1 = ImageRatioField('image1', '1080x1080', allow_fullsize=True, free_crop=True)
     croppingimage2 = ImageRatioField('image2', '1080x1080', allow_fullsize=True, free_crop=True)
+
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+        db_index=True,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def delete(self, *args, **kwargs):
         os.remove(self.logo.path)
