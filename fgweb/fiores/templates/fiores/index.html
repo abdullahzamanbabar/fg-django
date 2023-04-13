@@ -11,7 +11,8 @@
             <div class="swiper-wrapper w-screen h-[40vh] sm:h-[60vh] md:h-[76vh]">
             {% for img in slider %}
                 <div class="swiper-slide" data-hash="slide{{img.pk}}">
-                    <img class="md:object-cover w-screen h-full" src="{{img.sliderImg.url}}" />
+                    {% load cropping %}
+                    <img class="md:object-cover w-screen h-full" src="{% cropped_thumbnail img "cropping" scale=0.5 %}" />
                 </div>
             {% endfor %}
             </div>
@@ -65,6 +66,18 @@
                         <img class="references-banner-img w-16 md:w-56 lg:w-48" src="{% static 'imgs/azerbadjanlogo.png' %}"
                             alt="Azerbaycan Start-Ups">
                     </li>
+                    <li class="references-banner-list-item swiper-slide h-24">
+                        <img class="references-banner-img w-full md:w-full lg:w-56" src="{% static 'imgs/3.svg' %}"
+                            alt="HT-TTM">
+                    </li>
+                    <li class="references-banner-list-item swiper-slide h-24">
+                        <img class="references-banner-img w-full md:w-full lg:w-full" src="{% static 'imgs/2.svg' %}"
+                            alt="AWS ACTIVATE">
+                    </li>
+                    <li class="references-banner-list-item swiper-slide h-24">
+                        <img class="references-banner-img w-full md:w-56 lg:w-52" src="{% static 'imgs/1.svg' %}"
+                            alt="BIGG">
+                    </li>
                 </ul>
             </div>
         </div>
@@ -115,22 +128,18 @@
         <div class="flex flex-col items-center gap-5 lg:w-1/2">
             <div class="footer-contact flex flex-col justify-center items-center gap-4">
                 <h3 class="text-4xl">Join Us</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, dolor neque totam enim dolore
-                    architecto voluptatibus, accusantium voluptatem ducimus dignissimos natus quaerat amet iste
-                    ipsam
-                    debitis non, unde rerum maxime.</p>
+                <p>You can reach us from our e-mail address and social media accounts.</p>
             </div>
             <div class="footer-contact w-full flex flex-col justify-center items-center relative gap-4">
-                <form action="" method="POST" enctype="multipart/form-data" class="contact-us-form w-3/4 flex flex-col gap-4">
+                <form action="" method="POST" enctype="multipart/form-data" class="contact-us-form w-3/4 flex flex-col items-center gap-4">
                     {% csrf_token %}
-                    <input class="h-6 w-full rounded" type="text" name="contact-us-name" id="contact-us-name"
+                    <input class="h-6 w-full lg:w-1/2  rounded" type="text" name="contact-us-name" id="contact-us-name"
                         placeholder="Name" required minlength="4" maxlength="8" size="20">
-                    <input class="h-6 w-full rounded" type="email" name="contact-us-email" id="contact-us-email" placeholder="E-mail" size="20"
+                    <input class="h-6 w-full lg:w-1/2  rounded" type="email" name="contact-us-email" id="contact-us-email" placeholder="E-mail" size="20"
                         required>
-                    <input class="h-6 w-full rounded" type="text" name="contact-us-subject" id="contact-us-subject"
-                        placeholder="Subject" minlength="4" maxlength="8" size="20">
-                    <textarea class="h-20 w-full rounded resize-none" name="contact-us-message" id="contact-us-message"
-                        placeholder="Message" minlength="4" size="20"></textarea>
+                    <input class="h-6 w-full lg:w-1/2  rounded" type="text" name="contact-us-subject" id="contact-us-subject"
+                        placeholder="Subject" minlength="4" maxlength="16" size="20">
+
                     <div class="flex gap-4 mt-4 justify-center">
                         <div class="relative inline-block w-full md:w-auto">
                             <label for="cv"

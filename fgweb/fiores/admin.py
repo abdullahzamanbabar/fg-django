@@ -6,7 +6,7 @@ from fiores.models import SliderImgs, Contact, Members, Projects
 
 # Register your models here.
 
-class SliderImgsAdmin(admin.ModelAdmin):
+class SliderImgsAdmin(ImageCroppingMixin, admin.ModelAdmin):
     def delete_queryset(self, request, queryset):
         for obj in queryset:
             os.remove(obj.sliderImg.path)
@@ -24,7 +24,7 @@ class MembersAdmin(ImageCroppingMixin, admin.ModelAdmin):
             os.remove(obj.photo.path)
         super().delete_queryset(request, queryset)
 
-class ProjectsAdmin(admin.ModelAdmin):
+class ProjectsAdmin(ImageCroppingMixin, admin.ModelAdmin):
     def delete_queryset(self, request, queryset):
         for obj in queryset:
             os.remove(obj.logo.path)

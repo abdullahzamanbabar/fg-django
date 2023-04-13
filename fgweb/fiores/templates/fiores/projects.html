@@ -18,15 +18,17 @@
                     voluptatum odit aperiam similique vero explicabo dignissimos dicta ratione officia, ducimus sint
                     laboriosam repellat accusamus!</p>
             </div>
- 
+
             <!-- Projects -->
 
             {% for project in projects %}
 
             <div class="projects-banner px-10 my-10">
-                
+
                 <div class="flex justify-start items-center gap-6 pb-5">
-                    <img src="{{project.logo.url}}" class="w-10 lg:w-24" alt="">
+                    {% load cropping %}
+                    <img src="{% cropped_thumbnail project "croppinglogo" scale=0.5 %}" class="w-10 lg:w-24" alt="">-->
+                    <!--<img src="{{project.logo.url}}" class="w-10 lg:w-24" alt="">-->
                     <h2 class="text-green-950 text-3xl lg:text-5xl">{{project.title}}</h2>
                 </div>
                 <div>
@@ -36,11 +38,14 @@
                         rel="noopener noreferrer">{{project.projecturl}}</a>
                     {% endif %}
                     <div class="flex flex-col md:flex-row px-10" class="md:mb-20">
-                        <img class="md:w-1/2" src="{{project.image1.url}}" alt="">
-                        <img class="md:w-1/2" src="{{project.image2.url}}" alt="">
+                        {% load cropping %}
+                        <img class="md:w-1/2" src="{% cropped_thumbnail project "croppingimage1" scale=0.5 %}" alt="">
+                        <img class="md:w-1/2" src="{% cropped_thumbnail project "croppingimage2" scale=0.5 %}" alt="">
+                        <!--<img class="md:w-1/2" src="{{project.image1.url}}" alt="">-->
+                        <!--<img class="md:w-1/2" src="{{project.image2.url}}" alt="">-->
                     </div>
                 </div>
-           
+
             </div>
             {% endfor %}
 

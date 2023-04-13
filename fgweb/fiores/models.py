@@ -5,6 +5,7 @@ import os
 # Create your models here.
 class SliderImgs(models.Model):
     sliderImg = models.ImageField(upload_to="slider_imgs/")
+    cropping = ImageRatioField('sliderImg', '1080x1080', allow_fullsize=True, free_crop=True)
 
     def delete(self, *args, **kwargs):
         os.remove(self.sliderImg.path)
@@ -42,7 +43,7 @@ class Members(models.Model):
     group =  models.CharField(max_length=200, choices=choices, default='1')
     linkedin =  models.CharField(max_length=200)
     photo = models.ImageField(upload_to="members/")
-    cropping = ImageRatioField('photo', '650x650')
+    cropping = ImageRatioField('photo', '650x650',)
 
     def delete(self, *args, **kwargs):
         os.remove(self.photo.path)
@@ -58,6 +59,9 @@ class Projects(models.Model):
     projecturl =  models.CharField(max_length=200, blank=True, verbose_name='Project Url (Optional)')
     image1 = models.ImageField(upload_to="projects/")
     image2 = models.ImageField(upload_to="projects/")
+    croppinglogo = ImageRatioField('logo', '650x650', allow_fullsize=True, free_crop=True)
+    croppingimage1 = ImageRatioField('image1', '1080x1080', allow_fullsize=True, free_crop=True)
+    croppingimage2 = ImageRatioField('image2', '1080x1080', allow_fullsize=True, free_crop=True)
 
     def delete(self, *args, **kwargs):
         os.remove(self.logo.path)
