@@ -1,6 +1,0 @@
-# pip install -r requirements.txt
-# python -m django --version
-
-django-image-cropping==1.7
-easy-thumbnails==2.8.5
-Pillow==9.5.0
