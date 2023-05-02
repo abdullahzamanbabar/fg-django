@@ -1,0 +1,9 @@
+# pip install -r requirements.txt
+
+Django==4.0.7
+Pillow
+ip2geotools
+
+
+
+# pip install --force-reinstall --no-binary :all: sabctools

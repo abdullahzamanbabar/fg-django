@@ -1,0 +1,90 @@
+html {
+    scroll-behavior: smooth;
+}
+
+#header {
+    background-color: #000000;
+    text-align: center;
+}
+
+#header div{
+    display: inline-block;
+    border:solid;
+    border-color: #ffffff;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+#header img{
+    width:70%;
+    padding :2% 0;
+}
+
+#expand {
+    /* position: absolute; */
+    /* position: sticky; */
+    /* right:0; */
+    /* margin-left: auto; */  /* When using <img> tag for expand*/
+    float:right; /* When using <i> tag for expand*/
+    float:right;
+    color: #ffffff;
+    color:#000000;
+    font-size: 25px;
+}
+
+#collapse {
+    color:#ffffff;
+    color:#000000;
+    font-size: 25px;
+}
+
+#expand:hover {
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+#collapse:hover{
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+#navlist{
+    /* border:solid; */
+    width: fit-content;
+    margin-left: auto;
+    text-decoration:none;
+    background-color: #ffffff;
+    /* background-color: #000000; */
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color:#000000;
+    font-weight:400;
+}
+
+.nav-link:hover{
+    color:#000000;
+    opacity: 0.5;
+}
+
+.shownav {
+    display:none;
+}
+
+@media screen and (max-width: 500px) {
+    .shownav{
+        display:flex;
+    }
+    .hidenav {
+        display:none;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .shownav{
+        display:flex;
+    }
+}
