@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@500&display=swap');
+
+.blob > div {
+    /* border:solid; */
+}
+
+.row.blob {
+    /* background-image: url("../imgs/Paint3.png"); */
+}
+
+.myinfo {
+    /* padding-top:10%;
+    padding-left:10%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left:10%;
+}
+
+.myinfo p {
+    font-family: 'Syne';
+    font-style: italic;
+    font-size: larger;
+}
+
+.myinfo p img {
+    width:100px;
+    /* width:20%; */
+    border-radius: 25px;
+}
+
+.myinfo h1 {
+    /* color: #2d3436; */
+    margin-top: 4%;
+    margin-bottom: 4%;
+    font-family: 'Cinzel Decorative';
+    white-space: nowrap;
+    overflow: hidden;
+    width: 20em;
+    animation: type 4s ease-in 0s infinite alternate;
+}
+
+@keyframes type{ 
+    from { 
+        width: 0; 
+    }
+}
+
+/* #creative {
+    border:solid;
+    color:white;
+    border-style:25px;
+    font-size: larger;
+    background: linear-gradient(to right, #7b4397, #dc2430);
+} */
+
+.btncv{
+    border-radius: 25px;
+    margin-top:10%;
+    margin-bottom:30px;
+    padding:2%;
+    background-color: #000000;
+    box-shadow: 2px 2px #ffffff;
+}
+
+#cv-btn {
+    padding:5px;
+    text-decoration: none;
+    color:white;
+    font-family: 'Syne';
+}
+
+.blob_container {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 3%;
+}
+
+#blobshape {
+    width:450px;
+    height: 500px;
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30% ;
+    background-image: linear-gradient(45deg,rgb(0, 0, 0) 0%,rgb(53, 92, 125) 100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    /* transition: border-radius 1s ease-in-out; */
+    animation: animateBorderRadius 2s ease-in-out infinite alternate;
+}
+
+@keyframes animateBorderRadius {
+  from {
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+  }
+  to {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+#blobshape:hover {
+    animation-play-state: paused;
+}
+
+@media screen and (max-width: 500px) {
+    #blobshape {
+        width:330px;
+        height: 380px;
+    }
+    #blobshape img{
+        width: 300px;
+    }
+}
+
+  @media screen and (max-width: 350px) {
+    #blobshape {
+        width:305px;
+        height: 380px;
+    }
+    #blobshape img{
+        width: 280px;
+    }
+  }

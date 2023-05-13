@@ -1,0 +1,20 @@
+{% extends 'header_footer_company.html' %}
+{% load static %}
+
+{% block loadlinks %}
+<link rel="stylesheet" href="{% static 'CompanyApp/css/story.css' %}">
+{% endblock %}
+
+{% block title %}
+<title>Story | Corp</title>
+{% endblock %}
+
+{% block sitecontent %}
+    <!-- STORY -->
+    <div class="container-fluid storyouter">
+        <div class="container storyinner">
+            <h1>{{story.title}}</h1>
+            <p>{{story.text}}</p>
+        </div>
+    </div>
+{% endblock %}
