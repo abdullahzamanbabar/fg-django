@@ -9,7 +9,7 @@ from portfolioapp1.models import Contact
 
 class IndexView(View):
     template = "portfolioapp1/index.html"
-    success_url = reverse_lazy("portfolioapp1:index")
+    success_url = reverse_lazy("portfolioapp1:Index")
 
     def get(self, request):
 
