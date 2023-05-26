@@ -1,0 +1,9 @@
+# pip install -r requirements.txt
+# python -m django --version
+# django-admin-sortable2 => After following the necessary docs do -> python manage.py reorder <app.model>
+# python manage.py reorder fiores.Members
+
+django-image-cropping==1.7
+easy-thumbnails==2.8.5
+Pillow==9.5.0
+django-admin-sortable2==2.1.5
